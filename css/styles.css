@@ -16,6 +16,10 @@
   --company-icon: #8e8f99;
 
   --footer-hover-focus: #31d0aa;
+
+  --modal-backdrop: rgba(46, 47, 66, 0.4);
+
+  --modal-window-background: #fcfcfc;
 }
 
 /**
@@ -149,10 +153,32 @@ img {
 .nav-link:focus {
   color: var(--hover-focus-color);
 }
+
+.nav-link::after {
+  content: '';
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+
+  border-radius: 2px;
+}
+
+.nav-link.active::after {
+  background: var(--hover-focus-color);
+}
+.nav-link.active {
+  color: var(--hover-focus-color);
+}
 .nav-list {
   display: flex;
 }
 .nav-list > .item {
+  position: relative;
   margin-right: 40px;
 }
 .nav-list > .item:last-child {
@@ -480,6 +506,55 @@ address {
 .footer-social {
   gap: 16px;
 }
+
+/**
+  |============================
+  | MODAL
+  |============================
+*/
+
+.backdrop {
+  display: none;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(46, 47, 66, 0.4);
+}
+.modal {
+  position: absolute;
+  left: 516px;
+  top: 88px;
+  width: 408px;
+  height: 576px;
+
+  background-color: var(--modal-window-background);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.button-modal {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+
+  border-radius: 50%;
+  background: var(--button-border);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.modal-icon {
+  fill: var(--dark-accent);
+}
+
 /**
   |============================
   | PORTFOLIO
@@ -550,4 +625,44 @@ address {
 .portfolio-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+.portfolio-thumb {
+  position: relative;
+}
+
+/* OVERLAY */
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 40px 32px;
+  background-color: var(--accent-color);
+}
+.overlay-text {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--light-accent);
+}
+/**
+  |============================
+  | VISUALLY-HIDDEN
+  |============================
+*/
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  margin: -1px;
 }
