@@ -531,10 +531,11 @@ address {
 }
 .modal {
   position: absolute;
-  left: 516px;
+  left: 50%;
   top: 88px;
   width: 408px;
   height: 576px;
+  transform: translate(-50%);
 
   background-color: var(--modal-window-background);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
