@@ -158,7 +158,7 @@ img {
   content: '';
 
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
 
   display: block;
@@ -244,13 +244,13 @@ address {
   background-position: center;
 }
 .hero-title {
-  max-width: 496px;
-  margin-bottom: 48px;
-  color: var(--primary-bg-color);
   font-weight: 700;
   font-size: 56px;
   line-height: 1.07;
   letter-spacing: 0.02em;
+  max-width: 496px;
+  margin-bottom: 48px;
+  color: var(--primary-bg-color);
   margin-left: auto;
   margin-right: auto;
 }
