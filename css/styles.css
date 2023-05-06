@@ -513,8 +513,14 @@ address {
   |============================
 */
 
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .backdrop {
-  display: none;
+  /* display: none; */
   position: fixed;
   left: 0px;
   top: 0px;
